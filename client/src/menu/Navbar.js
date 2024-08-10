@@ -33,7 +33,7 @@ function Navbar() {
         {/* Logo and Main Navigation */}
         <div className="flex items-center space-x-4">
           <h1 className="text-2xl font-bold">
-            <Link to="/" className="text-white hover:text-gray-400">🚗 Auto Parts</Link>
+            <Link to="/" className="text-white hover:text-gray-400">JAC Auto Parts</Link>
           </h1>
           <nav className="hidden md:flex space-x-4">
             <div className="relative">

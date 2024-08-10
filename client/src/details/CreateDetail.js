@@ -6,6 +6,7 @@ function CreateDetail() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [machine, setMachine] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -34,14 +35,14 @@ function CreateDetail() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !description || !price || !imageUrl) {
+    if (!name || !description || !price || !machine || !imageUrl) {
       setError('All fields are required');
       return;
     }
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const detailData = { name, description, price, imageUrl };
+      const detailData = { name, description, price, imageUrl, machine }; // Include machine
       if (isEditing) {
         await axios.put(`http://localhost:3001/api/details/${id}`, detailData, {
           headers: { Authorization: `Bearer ${token}` }
@@ -60,7 +61,7 @@ function CreateDetail() {
     } finally {
       setLoading(false);
     }
-  };
+  };  
 
   return (
     <div className="container mx-auto p-8 bg-white shadow-lg rounded-lg mt-12 max-w-lg">
@@ -73,6 +74,16 @@ function CreateDetail() {
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="border border-gray-300 p-3 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700 font-semibold mb-2">Machine</label>
+          <input
+            type="text"
+            placeholder="Machine"
+            value={machine}
+            onChange={(e) => setMachine(e.target.value)}
             className="border border-gray-300 p-3 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>

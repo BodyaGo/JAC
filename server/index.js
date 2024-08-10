@@ -76,8 +76,11 @@ app.get('/api/profile', auth, async (req, res) => {
 
 app.post('/api/details', [auth, isAdmin], async (req, res) => {
   try {
-    const { name, description, price, imageUrl } = req.body;
-    const detail = new Detail({ name, description, price, imageUrl });
+    const { name, description, price, imageUrl, machine } = req.body; // Include machine
+    if (!machine) {
+      return res.status(400).json({ message: 'Machine field is required' });
+    }
+    const detail = new Detail({ name, description, price, imageUrl, machine });
     await detail.save();
     res.json({ message: 'Detail created' });
   } catch (err) {
@@ -109,8 +112,11 @@ app.get('/api/details', async (req, res) => {
 app.put('/api/details/:id', [auth, isAdmin], async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, description, price, imageUrl } = req.body;
-    await Detail.findByIdAndUpdate(id, { name, description, price, imageUrl });
+    const { name, description, price, imageUrl, machine } = req.body; // Include machine
+    if (!machine) {
+      return res.status(400).json({ message: 'Machine field is required' });
+    }
+    await Detail.findByIdAndUpdate(id, { name, description, price, imageUrl, machine });
     res.json({ message: 'Detail updated' });
   } catch (err) {
     console.error('Detail update error:', err);

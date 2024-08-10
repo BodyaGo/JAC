@@ -1,15 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce';
-import FilterSidebar from './FilterSidebar';
-import DetailCard from './DetailCard';
+import FilterSidebar from '../menu/FilterSidebar';
+import DetailCard from './ProductCard';
 
 function DetailCards() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [brands, setBrands] = useState([]);
-  const [features, setFeatures] = useState([]);
+  const [machines, setMachines] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     category: '',
     priceMin: 0,
@@ -40,36 +38,17 @@ function DetailCards() {
   }, [selectedFilters, sortOption, page]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchMachines = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/categories');
-        setCategories(response.data);
+        const response = await axios.get('http://localhost:3001/api/machines');
+        console.log('Fetched machines:', response.data); // Debug log
+        setMachines(response.data);
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error fetching machines:', error);
       }
     };
 
-    const fetchBrands = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/api/brands');
-        setBrands(response.data);
-      } catch (error) {
-        console.error('Error fetching brands:', error);
-      }
-    };
-
-    const fetchFeatures = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/api/features');
-        setFeatures(response.data);
-      } catch (error) {
-        console.error('Error fetching features:', error);
-      }
-    };
-
-    fetchCategories();
-    fetchBrands();
-    fetchFeatures();
+    fetchMachines();
   }, []);
 
   const debouncedFetchData = useCallback(debounce(fetchData, 500), [fetchData]);
@@ -130,12 +109,9 @@ function DetailCards() {
   return (
     <div className="flex flex-wrap lg:flex-nowrap">
       <FilterSidebar
-        categories={categories}
-        brands={brands}
-        features={features}
+        machines={machines}
         selectedFilters={selectedFilters}
         onFilterChange={handleFilterChange}
-        sortOption={sortOption}
       />
       
       <main className="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg">
