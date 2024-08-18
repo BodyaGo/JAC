@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="bg-indigo-500 py-6">
+    <footer className="bg-gray-900">
+      <div className="bg-gray-800 py-6">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
             <div className="mb-3 text-center md:mb-0 md:text-left">
               <span className="font-bold uppercase tracking-widest text-gray-100">Новини</span>
-              <p className="text-indigo-200">Підпишіться на нашу розсилку</p>
+              <p className="text-gray-300">Підпишіться на нашу розсилку</p>
             </div>
 
             <form className="flex w-full gap-2 md:max-w-md">
               <input
                 placeholder="Електронна пошта"
-                className="w-full flex-1 rounded border border-white bg-indigo-400 px-3 py-2 text-white placeholder-indigo-100 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                className="w-full flex-1 rounded border border-white bg-gray-700 px-3 py-2 text-white placeholder-gray-300 outline-none ring-gray-300 transition duration-100 focus:ring"
               />
               <button
-                className="inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-indigo-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:text-indigo-600 md:text-base"
+                className="inline-block rounded bg-white px-8 py-2 text-center text-sm font-semibold text-gray-900 outline-none ring-gray-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:text-gray-600 md:text-base"
               >
                 Відправити
               </button>
@@ -33,7 +33,7 @@ function Footer() {
             <div className="col-span-full lg:col-span-2">
               {/* logo */}
               <div className="mb-4 lg:-mt-2">
-                <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl" aria-label="logo">
+                <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold text-white md:text-2xl" aria-label="logo">
                   <svg width="95" height="94" viewBox="0 0 95 94" className="h-auto w-5 text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M96 0V47L48 94H0V47L48 0H96Z" />
                   </svg>
@@ -41,7 +41,7 @@ function Footer() {
                 </Link>
               </div>
 
-              <p className="mb-6 text-gray-500 sm:pr-8">
+              <p className="mb-6 text-gray-400 sm:pr-8">
                 JAC ТОВ Україна — провідний постачальник інноваційних рішень для автомобільної промисловості в Україні.
               </p>
 
@@ -64,65 +64,111 @@ function Footer() {
                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
                   {/* LinkedIn icon */}
                   <svg className="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.5 20h-3v-11h3v11zm-1.5-12.5c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.5h-3v-5.5c0-3.036-3.5-2.8-3.5 0v5.5h-3v-11h3v1.5c1.396-2.586 7-2.777 7 2.475v7.025z" />
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.029 19h-2.971v-10h2.971v10zm-1.485-11.287c-.953 0-1.726-.775-1.726-1.726s.773-1.726 1.726-1.726c.953 0 1.726.775 1.726 1.726s-.774 1.726-1.726 1.726zm11.514 11.287h-2.971v-5.372c0-3.203-4.029-2.966-4.029 0v5.372h-2.971v-10h2.971v1.408c1.371-2.566 7.029-2.769 7.029 2.471v6.121z" />
+                  </svg>
+                </a>
+
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
+                  {/* Instagram icon */}
+                  <svg className="h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c3.3 0 3.707.012 5.002.072 1.294.06 2.183.267 2.991.571.814.306 1.51.732 2.205 1.427.695.695 1.12 1.391 1.427 2.205.305.808.511 1.697.571 2.991.06 1.295.072 1.702.072 5.002s-.012 3.707-.072 5.002c-.06 1.294-.267 2.183-.571 2.991-.306.814-.732 1.51-1.427 2.205-.695.695-1.391 1.12-2.205 1.427-.808.305-1.697.511-2.991.571-1.295.06-1.702.072-5.002.072s-3.707-.012-5.002-.072c-1.294-.06-2.183-.267-2.991-.571-.814-.306-1.51-.732-2.205-1.427-.695-.695-1.12-1.391-1.427-2.205-.305-.808-.511-1.697-.571-2.991-.06-1.295-.072-1.702-.072-5.002s.012-3.707.072-5.002c.06-1.294.267-2.183.571-2.991.306-.814.732-1.51 1.427-2.205.695-.695 1.391-1.12 2.205-1.427.808-.305 1.697-.511 2.991-.571 1.295-.06 1.702-.072 5.002-.072zm0-2c-3.345 0-3.75.014-5.057.073-1.312.06-2.22.271-3.005.58-.92.343-1.703.807-2.486 1.59-.783.783-1.247 1.566-1.59 2.486-.31.785-.521 1.693-.581 3.005-.059 1.307-.073 1.712-.073 5.057s.014 3.75.073 5.057c.06 1.312.271 2.22.58 3.005.343.92.807 1.703 1.59 2.486.783.783 1.566 1.247 2.486 1.59.785.31 1.693.521 3.005.581 1.307.059 1.712.073 5.057.073s3.75-.014 5.057-.073c1.312-.06 2.22-.271 3.005-.58.92-.343 1.703-.807 2.486-1.59.783-.783 1.247-1.566 1.59-2.486.31-.785.521-1.693.581-3.005.059-1.307.073-1.712.073-5.057s-.014-3.75-.073-5.057c-.06-1.312-.271-2.22-.58-3.005-.343-.92-.807-1.703-1.59-2.486-.783-.783-1.566-1.247-2.486-1.59-.785-.31-1.693-.521-3.005-.581-1.307-.059-1.712-.073-5.057-.073zm0 5.837c-3.405 0-6.163 2.758-6.163 6.163s2.758 6.163 6.163 6.163 6.163-2.758 6.163-6.163c0-3.405-2.758-6.163-6.163-6.163zm0 10.163c-2.208 0-4-1.79-4-4s1.792-4 4-4 4 1.792 4 4-1.792 4-4 4zm7.163-11.845c-.796 0-1.441-.645-1.441-1.44s.645-1.44 1.441-1.44c.795 0 1.439.645 1.439 1.44s-.644 1.44-1.439 1.44z" />
                   </svg>
                 </a>
               </div>
             </div>
 
-            {/* Company links */}
+            {/* Footer links here */}
             <div>
-              <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">Компанія</div>
+              <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">Категорії</div>
 
               <nav className="flex flex-col gap-4">
-                <Link to="/" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Про нас</Link>
-                <Link to="/news" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Новини</Link>
-                <Link to="/team" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Команда</Link>
-                <Link to="/contact" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Контакти</Link>
+                <div>
+                  <Link to="/" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Головна
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/catalog" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Каталог
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/blog" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Блог
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/about" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Про нас
+                  </Link>
+                </div>
               </nav>
             </div>
 
-            {/* Services links */}
+            {/* Footer more links */}
             <div>
-              <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">Послуги</div>
+              <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">Інформація</div>
 
               <nav className="flex flex-col gap-4">
-                <Link to="/service-1" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Інженерія</Link>
-                <Link to="/service-2" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Консалтинг</Link>
-                <Link to="/service-3" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Автообслуговування</Link>
-                <Link to="/service-4" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Запчастини</Link>
+                <div>
+                  <Link to="/shipping" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Доставка
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/payment" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Оплата
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/returns" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Повернення
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/contact" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    Контакти
+                  </Link>
+                </div>
               </nav>
             </div>
 
-            {/* Resources links */}
-            <div>
-              <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">Ресурси</div>
+            <div className="col-span-full lg:col-span-2">
+              <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">Адреса</div>
 
-              <nav className="flex flex-col gap-4">
-                <Link to="/blog" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Блог</Link>
-                <Link to="/support" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Підтримка</Link>
-                <Link to="/faq" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">FAQ</Link>
-                <Link to="/terms" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">Умови користування</Link>
-              </nav>
-            </div>
+              <address className="not-italic text-gray-400">
+                м. Київ, вул. Велика Васильківська, 100
+                <br />
+                Пн-Пт: 09:00-18:00
+              </address>
 
-            {/* Contact links */}
-            <div>
-              <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">Контакти</div>
-
-              <nav className="flex flex-col gap-4">
-                <a href="tel:+380123456789" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">+38 012 345 67 89</a>
-                <a href="mailto:info@jac.ua" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">info@jac.ua</a>
-                <a href="#" className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600">вул. Хрещатик, 12, Київ</a>
+              <nav className="mt-4 flex flex-col gap-4">
+                <div>
+                  <a href="tel:+380441234567" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    +38 (044) 334 43 41
+                  </a>
+                </div>
+                <div>
+                  <a href="mailto:info@example.com" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    sales@jac-motors.com.ua 
+                  </a><br></br>
+                  <a href="mailto:info@example.com" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    jacmotorsukraine@gmail.com 
+                  </a><br></br>
+                  <a href="mailto:info@example.com" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    service.jack.motors@gmail.com 
+                  </a><br></br>
+                  <a href="mailto:info@example.com" className="text-gray-400 transition duration-100 hover:text-indigo-500 active:text-indigo-600">
+                    service.jacmotorsua@gmail.com
+                  </a>
+                </div>
               </nav>
             </div>
           </div>
-
-          <div className="border-t py-8 text-center text-sm text-gray-400">© 2024 JAC ТОВ Україна. Всі права захищені.</div>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

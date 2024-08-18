@@ -3,15 +3,16 @@ import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router
 
 import Navbar from './menu/Navbar';
 import Footer from './menu/Footer';
+import Contact from './menu/Contact';
+
 
 import Register from './user/Register';
 import Profile from './user/Profile';
 import Login from './user/Login';
+import Cart from './user/Cart';
 
 import CreateDetail from './details/CreateDetail';
 import DetailCards from './details/DetailCards';
-import Details from './details/Details';
-import Cart from './user/Cart';
 
 function App() {
   const history = useHistory();
@@ -35,8 +36,8 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/create-detail/:id?" component={CreateDetail} />
           <Route path="/cart" component={Cart} />
+          <Route path="/contact" component={Contact} />
           <Route path="/" component={DetailCards} exact />
-          <Route path="/products" component={Details} exact />
         </Switch>
       </main>
       <Footer />

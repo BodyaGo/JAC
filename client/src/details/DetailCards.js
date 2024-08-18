@@ -8,14 +8,7 @@ function DetailCards() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [machines, setMachines] = useState([]);
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: '',
-    priceMin: 0,
-    priceMax: 15000,
-    availability: [],
-    brands: [],
-    features: []
-  });
+  const [selectedFilters, setSelectedFilters] = useState({});
   const [sortOption, setSortOption] = useState('popularity');
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -41,8 +34,8 @@ function DetailCards() {
     const fetchMachines = async () => {
       try {
         const response = await axios.get('http://localhost:3001/api/machines');
-        console.log('Fetched machines:', response.data); // Debug log
-        setMachines(response.data);
+        console.log('Fetched machines:', response.data);
+        setMachines(response.data); // Ensure the fetched data is set here
       } catch (error) {
         console.error('Error fetching machines:', error);
       }
@@ -53,11 +46,8 @@ function DetailCards() {
 
   const debouncedFetchData = useCallback(debounce(fetchData, 500), [fetchData]);
 
-  const handleFilterChange = (filterName, value) => {
-    setSelectedFilters(prevFilters => ({
-      ...prevFilters,
-      [filterName]: value
-    }));
+  const handleFilterChange = (newFilters) => {
+    setSelectedFilters(newFilters);
     debouncedFetchData();
   };
 
@@ -115,23 +105,6 @@ function DetailCards() {
       />
       
       <main className="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg">
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <label htmlFor="sort" className="font-semibold text-gray-700">Sort by:</label>
-            <select
-              id="sort"
-              value={sortOption}
-              onChange={handleSortChange}
-              className="ml-2 p-2 border rounded bg-white shadow-sm"
-            >
-              <option value="popularity">Popularity</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-              <option value="newest">Newest</option>
-            </select>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {details.length > 0 ? (
             details.map(detail => (
@@ -150,7 +123,7 @@ function DetailCards() {
           <button
             onClick={() => handlePagination('prev')}
             disabled={page === 1}
-            className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors duration-300 ${page === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             Previous
           </button>
@@ -158,7 +131,7 @@ function DetailCards() {
           <button
             onClick={() => handlePagination('next')}
             disabled={page === totalPages}
-            className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors duration-300 ${page === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             Next
           </button>
